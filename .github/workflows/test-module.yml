@@ -15,6 +15,10 @@ jobs:
   run:
     name: "Run tests"
     uses: NethServer/ns8-github-actions/.github/workflows/test-module.yml@v1
+    permissions:
+      issues: write
+      pull-requests: write
+      statuses: write
     with:
       ui_tests_strategy: on_renovate_ui_change
       debug_shell: ${{ github.event.inputs.debug_shell == 'true' }}
